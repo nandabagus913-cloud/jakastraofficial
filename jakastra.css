@@ -48,6 +48,26 @@ body{
 }
 
 /* ═══════════════════════════════════════════════════════════
+   SKIP LINK (Aksesibilitas)
+═══════════════════════════════════════════════════════════ */
+.skip-link{
+  position:absolute;
+  left:-9999px;top:0;
+  z-index:9999;
+  padding:.5rem 1rem;
+  background:#1e40af;
+  color:#fff;
+  border-radius:0 0 8px 0;
+  font-size:.875rem;
+  font-weight:600;
+  text-decoration:none;
+  transition:left 0s;
+}
+.skip-link:focus{
+  left:0;
+}
+
+/* ═══════════════════════════════════════════════════════════
    CUSTOM CURSOR
 ═══════════════════════════════════════════════════════════ */
 .cursor{
@@ -70,7 +90,12 @@ body.cursor-hover .cursor-ring{
   border-color:rgba(184,224,64,.9);
 }
 body.cursor-hover .cursor{background:var(--lime2)}
-@media(hover:none){.cursor,.cursor-ring{display:none}body{cursor:auto}}
+@media(hover:none){
+  .cursor,.cursor-ring{display:none}
+  body,a,button,.nav-btn,.burger,
+  .drawer .d-btn,.btn-primary,
+  .btn-ghost,.soc,.chip{cursor:auto}
+}
 
 /* ═══════════════════════════════════════════════════════════
    SCROLL PROGRESS BAR
@@ -242,10 +267,9 @@ nav.solid{
   display:flex;align-items:center;justify-content:center;
   flex-shrink:0;
   position:relative;
-  width:450px;height:450px;  /* diperbesar */
-  margin-right:190px;        /* geser ke kiri */
-  margin-top:-250px;          /* naik ke atas */
-  /* desktop only — hidden on mobile via media query */
+  width:450px;height:450px;
+  margin-right:190px;
+  margin-top:-250px;
 }
 /* outer rotating ring */
 .hero-visual::before{
@@ -296,7 +320,7 @@ nav.solid{
 /* the logo circle itself */
 .hv-logo{
   position:relative;z-index:2;
-  width:340px;height:340px;border-radius:50%;  /* diperbesar dari 260px */
+  width:340px;height:340px;border-radius:50%;
   overflow:hidden;
   border:2.5px solid rgba(184,224,64,.35);
   box-shadow:
@@ -772,7 +796,7 @@ h2.section-title{
 .tl-left .section-lead{margin-bottom:1.75rem}
 
 /* step */
-.tl-steps{display:flex;flex-direction:column}
+.tl-steps{display:flex;flex-direction:column;list-style:none}
 .step{display:flex;gap:1.75rem;position:relative;padding-bottom:3rem}
 .step:last-child{padding-bottom:0}
 
@@ -900,6 +924,70 @@ h2.section-title{
 .tj-card p{font-size:.88rem;line-height:1.78;color:rgba(255,255,255,.44)}
 
 /* ═══════════════════════════════════════════════════════════
+   SECTION: FAQ
+═══════════════════════════════════════════════════════════ */
+#faq{
+  background:var(--cream);
+}
+#faq .section-title{
+  margin-bottom:0;
+}
+
+/* details / summary (accordion FAQ) */
+details{
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:1.25rem 1.5rem;
+  cursor:pointer;
+  background:#fff;
+  transition:background .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+details[open]{
+  background:#fff;
+  border-color:rgba(184,224,64,.4);
+  box-shadow:0 4px 20px rgba(184,224,64,.08);
+}
+details + details{
+  margin-top:.75rem;
+}
+
+summary{
+  font-weight:600;
+  font-size:1rem;
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  color:var(--ink);
+  cursor:pointer;
+  user-select:none;
+  -webkit-user-select:none;
+}
+summary::-webkit-details-marker{display:none}
+summary::marker{display:none}
+
+/* rotate chevron when open */
+details[open] summary svg{
+  transform:rotate(180deg);
+}
+summary svg{
+  flex-shrink:0;
+  stroke:var(--g4);
+  stroke-width:2;
+  fill:none;
+  transition:transform .3s var(--transition);
+}
+
+details p{
+  margin-top:.875rem;
+  font-size:.95rem;
+  line-height:1.78;
+  color:var(--mid);
+  padding-right:2rem;
+}
+
+/* ═══════════════════════════════════════════════════════════
    SECTION: CTA
 ═══════════════════════════════════════════════════════════ */
 .cta-section{background:var(--paper);padding:6rem 5%}
@@ -978,6 +1066,17 @@ footer::before{
   border-bottom:1px solid rgba(255,255,255,.06);
   position:relative;z-index:1;
 }
+.ft-brand-col{
+  grid-column:1 / -1; /* full width on its own row when grid collapses */
+}
+
+/* override: on desktop, brand col is just first column */
+@media(min-width:961px){
+  .ft-brand-col{
+    grid-column:auto;
+  }
+}
+
 .ft-logo-wrap{
   display:flex;align-items:center;gap:.875rem;margin-bottom:1.25rem;
 }
@@ -1023,6 +1122,7 @@ footer::before{
   display:flex;align-items:center;justify-content:center;
   transition:border-color .3s,background .3s,transform .3s var(--transition);
   cursor:none;
+  text-decoration:none;
 }
 .soc:hover{
   border-color:rgba(184,224,64,.45);
@@ -1083,6 +1183,8 @@ footer::before{
   .footer-bottom{flex-direction:column;text-align:center}
   .asal-wrap{gap:3rem}
   .blockquote{padding:1.75rem 1.75rem 1.75rem 2.25rem}
+  details{padding:1rem 1.25rem}
+  summary{font-size:.95rem}
 }
 @media(max-width:420px){
   .hero h1{font-size:2.15rem}
