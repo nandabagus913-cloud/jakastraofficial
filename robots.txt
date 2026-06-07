@@ -1,0 +1,33 @@
+# robots.txt — JAKASTRA (Jejak Langkah Santri Sumatera)
+# https://jakastra.netlify.app
+
+# Izinkan semua mesin pencari
+User-agent: *
+Allow: /
+
+# Izinkan Googlebot secara eksplisit
+User-agent: Googlebot
+Allow: /
+
+# Izinkan Googlebot Image
+User-agent: Googlebot-Image
+Allow: /
+
+# Izinkan Bingbot
+User-agent: Bingbot
+Allow: /
+
+# Blokir akses ke file yang tidak perlu diindeks
+Disallow: /wp-admin/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /cache/
+
+# Sitemap — bantu Google menemukan semua halaman
+Sitemap: https://jakastra.netlify.app/sitemap.xml
+
+# Crawl-delay untuk mesin pencari selain Google
+User-agent: *
+Crawl-delay: 10

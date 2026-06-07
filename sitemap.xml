@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Halaman utama — prioritas tertinggi -->
+  <url>
+    <loc>https://jakastra.org/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://jakastra.netlify.app/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jakastra.netlify.app/"/>
+    <image:image>
+      <image:loc>https://jakastra.netlify.app/logo-jakastra.jpeg</image:loc>
+      <image:title>JAKASTRA — Jaringan Alumni Santri Sumatera</image:title>
+      <image:caption>Logo dan identitas JAKASTRA, Jaringan Alumni Santri Sumatera dari Pesantren Al-Falah Putak</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Asal Mula -->
+  <url>
+    <loc>https://jakastra.netlify.app/#asal</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://jakastra.netlify.app/#asal"/>
+  </url>
+
+  <!-- Visi & Misi -->
+  <url>
+    <loc>https://jakastra.netlify.app/#visi</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://jakastra.netlify.app/#visi"/>
+  </url>
+
+  <!-- Proses Pembentukan -->
+  <url>
+    <loc>https://jakastra.netlify.app/#proses</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://jakastra.netlify.app/#proses"/>
+  </url>
+
+  <!-- Tujuan -->
+  <url>
+    <loc>https://jakastra.netlify.app/#tujuan</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://jakastra.netlify.app/#tujuan"/>
+  </url>
+
+  <!-- FAQ — penting untuk Google Rich Snippets -->
+  <url>
+    <loc>https://jakastra.netlify.app/#faq</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="id" href="https://jakastra.netlify.app/#faq"/>
+  </url>
+
+</urlset>
